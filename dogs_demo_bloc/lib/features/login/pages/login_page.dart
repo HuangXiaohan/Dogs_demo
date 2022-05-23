@@ -36,6 +36,8 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
+                // "email": "eve.holt@reqres.in",
+                // "password": "cityslicka"
                 TextFormField(
                   controller: emailTextController,
                   decoration: const InputDecoration(
@@ -67,6 +69,13 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 const SizedBox(height: 20),
+                if (localContext.read<LoginBloc>().state.errorMsg != null) ...{
+                  Text(
+                    localContext.read<LoginBloc>().state.errorMsg!,
+                    style: const TextStyle(color: Colors.red),
+                  ),
+                  const SizedBox(height: 20)
+                },
                 SizedBox(
                   width: 100,
                   height: 50,

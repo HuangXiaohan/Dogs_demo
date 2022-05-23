@@ -14,8 +14,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _onLoginPressed(LoginPressedEvent event, Emitter emitter) async {
     await _loginService.login(email: event.email, password: event.password).then((value) {
-      if (value) {
-        emitter(state.copyWith(isLogin: value));
+      if (value.token != null) {
+        emitter(state.copyWith(isLogin: true));
+      } else {
+        emitter(state.copyWith(isLogin: false, errorMsg: value.errorMsg));
       }
     });
   }
