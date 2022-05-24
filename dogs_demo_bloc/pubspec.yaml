@@ -37,6 +37,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   dio: ^4.0.6
   get_it: ^7.2.0
+  mockito: ^5.2.0
 
 dev_dependencies:
   flutter_test:

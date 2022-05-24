@@ -16,7 +16,11 @@ class LoginService {
           return LoginInfo();
         }
       }).onError((DioError error, stackTrace) {
-        return LoginInfo(errorMsg: error.response?.data['error'] ?? '');
+        var errorMsg = '';
+        if ((error.response?.data ?? '') != '') {
+          errorMsg = error.response?.data['error'];
+        }
+        return LoginInfo(errorMsg: errorMsg);
       });
     } on DioError catch (e) {
       throw ('Error occurred: $e');
