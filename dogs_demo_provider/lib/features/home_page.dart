@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: MultiProvider(providers: [
         ChangeNotifierProvider(create: (_) => LoginProvider()),
-        ChangeNotifierProvider(create: (_) => dogListProvider)
+        ChangeNotifierProvider.value(value: dogListProvider)
       ], child: _buildBody()),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
