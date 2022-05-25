@@ -1,6 +1,6 @@
 # Dogs_demo
 
-Le projet est un demo en flutter. Il est réalisé par deux différents architectures: **Provider** et **BLoC"
+Le projet est un demo en flutter. Il est réalisé par deux différents architectures: **Provider** et **BLoC**
 
  
 Avant de lancer le projet, exécutez cette commande pour installer les librairie:
@@ -22,9 +22,7 @@ flutter test
 
 ### Login
 
-- Compte correct: 
-Email: eve.holt@reqres.in
-Mot de passe: cityslicka
+- Compte correct: Email: eve.holt@reqres.in Mot de passe: cityslicka
 
 - Compte erreur: N'import quoi
 
