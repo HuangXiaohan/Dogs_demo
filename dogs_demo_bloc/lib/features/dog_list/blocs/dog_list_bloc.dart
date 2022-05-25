@@ -1,4 +1,4 @@
-import 'package:dogs_demo_bloc/models/dog.dart';
+import 'package:dogs_demo_bloc/features/dog_list/models/dog.dart';
 import 'package:dogs_demo_bloc/services/dog_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';

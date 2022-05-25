@@ -1,4 +1,4 @@
-import 'package:dogs_demo_bloc/models/dog.dart';
+import 'package:dogs_demo_bloc/features/dog_list/models/dog.dart';
 import 'package:flutter/material.dart';
 
 class DogDetail extends StatelessWidget {
