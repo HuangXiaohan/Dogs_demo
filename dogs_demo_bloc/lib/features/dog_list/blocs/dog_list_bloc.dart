@@ -11,16 +11,10 @@ class DogListBloc extends Bloc<DogListEvent, DogListState> {
 
   DogListBloc() : super(const DogListState()) {
     on<DogListInitEvent>(_initList);
-    on<DogListLoadingEvent>(_loadingData);
   }
 
   Future<void> _initList(DogListInitEvent _, Emitter emitter) async {
-    add(DogListLoadingEvent());
     var dogList = await _dogService.getDogs();
-    emitter(state.copyWith(dogList: dogList, isLoading: false));
-  }
-
-  Future<void> _loadingData(DogListLoadingEvent _, Emitter emitter) async {
-    emitter(state.copyWith(isLoading: true));
+    emitter(state.copyWith(dogList: dogList));
   }
 }

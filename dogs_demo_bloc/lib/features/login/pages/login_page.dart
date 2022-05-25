@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 // "email": "eve.holt@reqres.in",
-                // "password": "cityslicka"
+                // "password": "s"
                 TextFormField(
                   controller: emailTextController,
                   decoration: const InputDecoration(

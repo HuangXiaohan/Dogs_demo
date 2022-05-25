@@ -2,11 +2,10 @@ part of 'dog_list_bloc.dart';
 
 class DogListState {
   final List<Dog>? dogList;
-  final bool isLoading;
 
-  const DogListState({this.dogList, this.isLoading = false});
+  const DogListState({this.dogList});
 
-  DogListState copyWith({List<Dog>? dogList, bool? isLoading}) {
-    return DogListState(dogList: dogList ?? this.dogList, isLoading: isLoading ?? this.isLoading);
+  DogListState copyWith({List<Dog>? dogList}) {
+    return DogListState(dogList: dogList ?? this.dogList);
   }
 }
