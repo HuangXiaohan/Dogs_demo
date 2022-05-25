@@ -1,3 +1,5 @@
+import 'package:dogs_demo_provider/features/dog_list/pages/dog_list_page.dart';
+import 'package:dogs_demo_provider/features/dog_list/providers/dog_list_provider.dart';
 import 'package:dogs_demo_provider/features/login/providers/login_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,10 +15,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late int index;
+  late DogListProvider dogListProvider;
 
   @override
   void initState() {
     index = 0;
+    dogListProvider = DogListProvider();
+    dogListProvider.getDogList();
+
     super.initState();
   }
 
@@ -26,7 +32,10 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Dogs demo'),
       ),
-      body: MultiProvider(providers: [ChangeNotifierProvider(create: (_) => LoginProvider())], child: _buildBody()),
+      body: MultiProvider(providers: [
+        ChangeNotifierProvider(create: (_) => LoginProvider()),
+        ChangeNotifierProvider(create: (_) => dogListProvider)
+      ], child: _buildBody()),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -49,7 +58,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return const LoginPage();
       case 1:
-        return const LoginPage();
+        return const DogListPage();
       default:
         return const LoginPage();
     }

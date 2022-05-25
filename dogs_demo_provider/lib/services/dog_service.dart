@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:dogs_demo_provider/models/dog.dart';
+import 'package:dogs_demo_provider/features/dog_list/models/dog.dart';
 
 class DogService {
   final dio = Dio();
